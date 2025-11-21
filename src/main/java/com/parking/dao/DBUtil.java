@@ -8,8 +8,8 @@ public class DBUtil {
 
 	private static final String URL =
 	        "jdbc:mysql://localhost:3306/parking_db?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true";
-    private static final String USER = "root";       // 네 MySQL 계정
-    private static final String PASSWORD = "0000";   // 네가 설정한 비밀번호로 바꿔줘
+    private static final String USER = "root";       // 내 MySQL 계정
+    private static final String PASSWORD = "0000";   // 내가 설정한 비밀번호
 
     static {
         try {
