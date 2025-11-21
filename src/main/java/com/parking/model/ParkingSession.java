@@ -11,7 +11,6 @@ public class ParkingSession {
     private int fee;
     private String status;
 
-    // 추가: 계산용 필드 (분 단위 주차 시간)
     private long durationMinutes;
 
     public int getId() {
