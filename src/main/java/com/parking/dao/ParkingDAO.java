@@ -7,10 +7,10 @@ import java.time.Instant;
 
 public class ParkingDAO {
 
-    // 🔢 전체 주차 가능 대수 (원하는 숫자로 바꿔도 됨)
+    // 전체 주차 가능 대수
     private static final int TOTAL_SPACES = 50;
 
-    // === 공용 ===
+    // 공용
     public static int getTotalSpaces() {
         return TOTAL_SPACES;
     }
@@ -58,7 +58,7 @@ public class ParkingDAO {
         return false;
     }
 
-    // === 입차 처리 ===
+    // 입차 처리
     // 이미 입차 중인 경우 false, 정상 입차면 true
     public boolean startParking(String plate) {
         // 1) 이미 주차 중인지 체크
@@ -66,7 +66,7 @@ public class ParkingDAO {
             return false;
         }
 
-        // 2) (선택) 만차 여부 체크 – 만차면 입차 막고 싶으면 주석 해제
+        // 2) 만차 여부 체크 – 만차면 입차 막고 싶으면 주석 해제
         /*
         if (getRemainingSpaces() <= 0) {
             return false;
@@ -88,7 +88,7 @@ public class ParkingDAO {
         }
     }
 
-    // === 출차 처리 ===
+    // 출차 처리
     public ParkingSession endParking(String plate) {
         ParkingSession session = null;
 
@@ -124,7 +124,7 @@ public class ParkingDAO {
                     minutes = 1; // 최소 1분
                 }
 
-                // 요금 계산 (예: 1시간당 1,000원, 올림)
+                // 요금 계산 (1시간당 1,000원)
                 long hours = (minutes + 59) / 60;
                 int fee = (int) (hours * 1000);
 
