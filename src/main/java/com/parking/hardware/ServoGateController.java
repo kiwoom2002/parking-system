@@ -4,7 +4,6 @@ import com.fazecast.jSerialComm.SerialPort;
 
 public class ServoGateController {
 
-    // ★ 여기 COM 번호를 장치관리자에서 본 값으로 맞춰줘 (예: COM3, COM4)
     private static final String PORT_NAME = "COM4";
     private static final int BAUD_RATE = 9600;
 
@@ -52,7 +51,7 @@ public class ServoGateController {
 
     // 외부에서 호출하는 메서드는 그대로 openGate() 하나만 쓰면 됨
     public static void openGate() {
-        // 포트가 안 열려 있으면 시도해 보고, 그래도 안 되면 포기
+        // 포트가 안 열려 있으면 시도, 그래도 안 되면 포기
         if (!ensureOpen()) {
             System.err.println("[ServoGate] Serial port not open, cannot move servo.");
             return;
